@@ -13,7 +13,8 @@ before_install:
 - rm -f exportAWS.sh
 deploy:
   provider: s3
+  access_key_id: ASIAW6L7MAQV2HFKKRBE
+  secret_access_key:
+    secure: lcR8dJb5q/WuNSjd9p1O6FUsVfzE3uITwnndIPqyT94kFYemVzaN1B/JCctgeQIdhIbt1Y5WsJioz+LaxihpR8En6TwWhbGiBmxj8hFXKXEhAkXRWXJSu0yzz6RPk5hwR3eIumy2FTtHP41uRhuRhQTN3bJrhBc7VfZTJayGl9L5yE52dFQPshcm0F8wWuFcUsXU1ttGXMivDMwm6+6HfrVkuLRUP6OvFQxDnp0tK17lyf7pUZ8KzulfBV9INOyOqRqo0EFhzJkoOK88rmfgCJUBXMwLdtVrMFCRT/YtJuvWiWDOEXkF2sdN4pIhJzJ4XS0AJdB7ioamhTwJrawXL5wb2q+Ic7oSyJec6GbATGitnvENdGK15BjZkU/4D12PoHuiCgNvrPokcsLj/m2lquQ37lIX1Iw7IXhI1OUnjbVTBk+h/VBfDf4ioVvZQ4rawaCCDYOPONQBVjsMHPViqDsBod6bEsRoz8K3SvTDFyqQNHchaIN0QK5wbIRzx95ggvrPEXNuhJsz4Jb/sd/9NYVpeFdECxGJ1aOb2rkwkr7UIBygdOu2oOqq7oAJeU1uIKdiYKWZwax+BkU6IqiQd8PGIdrtZgC57ZrE0FPBmINqTzYEYdrgTnEZCcdSTJx6S/TiFrBvnap0crSlV6/lZkr4vfQKr7cnCFYAA2KjqkA=
   bucket: andy1huang-test-travis
-  region: "ap-northeast-1"
-  skip_cleanup: true
   acl: ''
