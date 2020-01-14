@@ -12,5 +12,8 @@ before_install:
 - echo "andyhuang-test"
 deploy:
   provider: s3
+  access_key_id: AKIAW6L7MAQVRRFVKKWO
+  secret_access_key:
+    secure: oJIwZkfjYejylG6j998uyLq5Ce1ujGGtzMEG5g1KjVgxigglvoFe465KxZvdd1sIyYFCQZAbwDD42fF28Zf8ZyJKWcog8Cw4Kaqq+2jZ0LOunTJitNkh8pMq/kk56iqUUWZ/ib5e2G74sCvqqBhRLQLt3eQVaxZ3UH3DayTnrpSurKvCJ+KuZPUSLboIWt2zKtJcn+2dejdtPPNChTm84elNoCPRmvK21kx8mw2URAB7rn022FrWeT01FaS9Gg+UNzuBH+ermMf3RgAqZa+yud/t2EP97mVw8dtzd2jmDjzzJ8NA3g5+nf31u0f98HlFjvewHE/4ouKCJo7iE6iiS2/h0Bi1jKWlwjMyY+TnLTQhZvWUgn9aYQWTiMjWl2EGGscaqocZvP8MRIAI5osq3gr9JCiyOhNzHaYGN3nAg9LcJJJO1+5YYJ/RafeN2NLmSlw1Y0GFFHRG/VUnreE6qjNu/ymBXJvs9ljAW26hns0HbuKfKZYGxb1lO+UD6oF+S47P/vDSukvcf3Oxli8hswrIJIwb+y80omKGnx+m86kMDZ60t2jCk59wdy4kSZEVlC2K022HUwX6EvGcJki/+hwCIuLJ4n8VKZqov00u7nGwzKbpAJ4cBjsTIAWuyQluGWSMGbPyUcczOJ0/NTN6sCg/27JCu5U5hNUdp3qmhag=
   bucket: andy1huang-test-travis
   acl: ''
