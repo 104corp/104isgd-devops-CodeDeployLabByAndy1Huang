@@ -9,3 +9,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_82a9358b401d_key -iv $encrypted_82a9358b401d_iv
   -in exportAWS.sh.enc -out exportAWS.sh -d
 - ls -al
+- curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip 
+- unzip awscli-bundle.zip 
+- ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws 
