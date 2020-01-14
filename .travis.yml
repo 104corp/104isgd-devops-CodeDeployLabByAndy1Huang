@@ -6,15 +6,11 @@ env:
   global:
   - AWS_DEFAULT_REGION=ap-northeast-1
 before_install:
-- openssl aes-256-cbc -K $encrypted_82a9358b401d_key -iv $encrypted_82a9358b401d_iv
-  -in exportAWS.sh.enc -out exportAWS.sh -d
-- source exportAWS.sh
-- echo $AWS_ACCESS_KEY_ID
-- rm -f exportAWS.sh
+- echo "andyhuang-test"
 deploy:
   provider: s3
-  access_key_id: ASIAW6L7MAQV2HFKKRBE
+  access_key_id: AKIAWYQKW3OGDBE24CVF
   secret_access_key:
-    secure: lcR8dJb5q/WuNSjd9p1O6FUsVfzE3uITwnndIPqyT94kFYemVzaN1B/JCctgeQIdhIbt1Y5WsJioz+LaxihpR8En6TwWhbGiBmxj8hFXKXEhAkXRWXJSu0yzz6RPk5hwR3eIumy2FTtHP41uRhuRhQTN3bJrhBc7VfZTJayGl9L5yE52dFQPshcm0F8wWuFcUsXU1ttGXMivDMwm6+6HfrVkuLRUP6OvFQxDnp0tK17lyf7pUZ8KzulfBV9INOyOqRqo0EFhzJkoOK88rmfgCJUBXMwLdtVrMFCRT/YtJuvWiWDOEXkF2sdN4pIhJzJ4XS0AJdB7ioamhTwJrawXL5wb2q+Ic7oSyJec6GbATGitnvENdGK15BjZkU/4D12PoHuiCgNvrPokcsLj/m2lquQ37lIX1Iw7IXhI1OUnjbVTBk+h/VBfDf4ioVvZQ4rawaCCDYOPONQBVjsMHPViqDsBod6bEsRoz8K3SvTDFyqQNHchaIN0QK5wbIRzx95ggvrPEXNuhJsz4Jb/sd/9NYVpeFdECxGJ1aOb2rkwkr7UIBygdOu2oOqq7oAJeU1uIKdiYKWZwax+BkU6IqiQd8PGIdrtZgC57ZrE0FPBmINqTzYEYdrgTnEZCcdSTJx6S/TiFrBvnap0crSlV6/lZkr4vfQKr7cnCFYAA2KjqkA=
-  bucket: andy1huang-test-travis
+    secure: v0A+GBqAq8NTtpIeQD+uXFdcTvyg1j8A1mBOa6J81IVYpHPmJAT0ji98sT+VmWwZ7fy8rn8ooySE6tvM2cpMERcTjRs+8zIBqBY02gbSsXvUzwhXaIWTKYVwy7QM1V9sYfu/jy9V/JQ9wWZjTq8T+c5ivmgr6swnpKLgM1RB5a4DihtTj/RedVC/+m50IalheCAyNMg4udjc+aGz9G3OmBZoy2sKIcEZc+acsUKa9FmqK8epuEJ+Lq2lzTQuF4CGTe+t0G7z+Oyn8GhJj6wlU7qCdhhQ8qiqmrzX745VM4VSe2nzf94rCWKzqZzrgk5rAWWwmxzfUtA6lB1Mb1dbGepezsXJabQtqYAMkIiWZVO9mdapgPqjCIxby1tGwmEqOYk5haE44+9uJRPdDc7wfkcy6gAS4yfMe+tLg9CuYQgtG9KZq7Rq3lc60XeKEMyRTvVbpLVbRCBVA4jAb+zZ324+6iY8ldvnCSPYDpDeFwOUk+q6gRsibuKtHCHtqaX8Kgkrd/8kj2AGC5+sEx0AFV2VpSHQEHlbncNbTUM4R30vBdH6Je39o1uHzRWPqc1LrGvdCreFq0KFCJGs+smF5kS4MjaxRCEbT2T/49kipx2FwtN5v6n01FZLOzgToXc/2WjGseRViVtop+UNQTbdZ+bL3Ef3lQej2r7hupwcfoI=
+  bucket: andyhuang-test-001
   acl: ''
