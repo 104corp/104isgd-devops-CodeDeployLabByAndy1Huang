@@ -12,5 +12,5 @@ before_install:
 - echo "andyhuang-test"
 deploy:
   provider: s3
-  bucket: andyhuang-test-001
+  bucket: andy1huang-test-travis
   acl: ''
