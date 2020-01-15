@@ -22,3 +22,4 @@ deploy:
     bundle_type: zip
     application: BlueGreen_APP
     deployment_group: BlueGreen_GRP
+    region: "ap-northeast-1"
