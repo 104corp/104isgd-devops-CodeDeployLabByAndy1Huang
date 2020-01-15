@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+hooks:
+  BeforeInstall:
+    - location: aws s3 sync s3://andy1huang-test-travis/BlueGreen /tmp
+    - location: cp /tmp/index.html /usr/share/nginx/html/index.html
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: ngins -s reload
+      timeout: 300
+      runas: root
+
