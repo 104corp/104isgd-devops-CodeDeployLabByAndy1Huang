@@ -4,6 +4,7 @@ php:
 
 script:
 - zip BlueGreen BlueGreen/*
+- mv BlueGreen.zip BlueGreen/
 - echo "zip BlueGreen Done"
 - ls -al
 env:
@@ -14,4 +15,5 @@ env:
 deploy:
   provider: s3
   bucket: andy1huang-test-travis
+  upload-dir: BlueGreen
   acl: ''
