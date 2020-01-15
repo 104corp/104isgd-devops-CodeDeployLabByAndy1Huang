@@ -19,5 +19,6 @@ deploy:
   - provider: codedeploy
     bucket: "andy1huang-test-travis"
     key: BlueGreen.zip 
+    bundle_type: zip
     application: BlueGreen_APP
     deployment_group: BlueGreen_GRP
