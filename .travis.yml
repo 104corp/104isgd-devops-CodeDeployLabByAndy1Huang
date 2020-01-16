@@ -1,9 +1,11 @@
 language: php
 php:
 - '5.6'
+before_deploy:
+- zip BlueGreen blue BlueGreen/Appspec/*
 script:
 - echo "zip BlueGreen Done"
-
+- ls -al|grep BlueGreen.zip
 env:
   global:
   - secure: JE9Le3vHdr7quqPM7zCdFQgzQwkKAKDmr4h1eP1BcthRxqXjCGNpxf+K6lgChKkEIrrSy0vUZrAtGeZTv1kUhzoLnNGc0KVfzL3XBkRPzjcOD23zQYmWiRSIFtYwi4Jo9EbBPMnzUclrYM1h+AW/BilF4T3hQAH9IPvkwKmA+j/Hil67d9oLod0qwDusMNs6JY43T0IX8nU/jckztEgGgMTvSAXrUchScZhN63Xd3g5AMhm5oyfR8UWOuqLQltw2Q7p1/iRBp0Xx2iZ8TyfQu/KWGfoVWCe6/fbAUuPjjNG0wlm7agtbHVJRxxCUcw6LV5sRWz067DRbv1utCAEfwEw9on7BFa1XcqEFKTka0WHaxsQrN36DGt5OSO4lhAtcPvDGaYFRtHJ9PLOhHUkJOFCht2yVDAEGLOIE9k4JSl0Pjs1VvMZzINtIjjgN54sF6ILpXoZ63otDG27NThE3NyGvPkuw2u0rW8BOHgFr+vvH1wLjSQoT9I7r0CbK7UxQURDNdddoOyo+YQIZBnGDYJajtezGnp30gSbTSVlVdcJS6C4tIvDg/7jiVUcdujpu9oUJ0TpEjZiPEbkGjA6QuEXSojamS2aHP5NRguWbZMnWZ4d0kPTJrT5H4StUzqzahVsPCQvsBivf8JYMyGRjU6/uhmCKr1RFQ0E8fzmaRKY=
