@@ -1,7 +1,6 @@
 language: php
 php:
 - '5.6'
-
 script:
 - zip BlueGreen BlueGreen/*
 - echo "zip BlueGreen Done"
@@ -12,14 +11,21 @@ env:
   - secure: JE9Le3vHdr7quqPM7zCdFQgzQwkKAKDmr4h1eP1BcthRxqXjCGNpxf+K6lgChKkEIrrSy0vUZrAtGeZTv1kUhzoLnNGc0KVfzL3XBkRPzjcOD23zQYmWiRSIFtYwi4Jo9EbBPMnzUclrYM1h+AW/BilF4T3hQAH9IPvkwKmA+j/Hil67d9oLod0qwDusMNs6JY43T0IX8nU/jckztEgGgMTvSAXrUchScZhN63Xd3g5AMhm5oyfR8UWOuqLQltw2Q7p1/iRBp0Xx2iZ8TyfQu/KWGfoVWCe6/fbAUuPjjNG0wlm7agtbHVJRxxCUcw6LV5sRWz067DRbv1utCAEfwEw9on7BFa1XcqEFKTka0WHaxsQrN36DGt5OSO4lhAtcPvDGaYFRtHJ9PLOhHUkJOFCht2yVDAEGLOIE9k4JSl0Pjs1VvMZzINtIjjgN54sF6ILpXoZ63otDG27NThE3NyGvPkuw2u0rW8BOHgFr+vvH1wLjSQoT9I7r0CbK7UxQURDNdddoOyo+YQIZBnGDYJajtezGnp30gSbTSVlVdcJS6C4tIvDg/7jiVUcdujpu9oUJ0TpEjZiPEbkGjA6QuEXSojamS2aHP5NRguWbZMnWZ4d0kPTJrT5H4StUzqzahVsPCQvsBivf8JYMyGRjU6/uhmCKr1RFQ0E8fzmaRKY=
   - secure: 5OzN9R7nbx06cT0vI9rtaI4jzUJcQSGXjzgYHJk3LoAE+4kzPhAo0cPRvVaOQMQUG57sdf52ZpqjXWLwr6wCqK0rjXn97TV7isyc1JLKvBw02h08gxn2rAOmlq3bOef+umkar0iFojJ2McJQhG8JiTIKnGAPTnUucSAPWX842wtf7T+jy1V4zHrcZmGvs6P9ujpJ0bnM/vvWgNp20MDZ+7mEolhR12FiA6CZIKk1GpIWrMFS/AICh7NrUKw64hVbxojewAOP1hXDvBepRZ2GU9r+LfUfWNAwV3rAGyu6X0iRfKFvfT6bFe2aswrqoPl5fhpMlx7idUO9zkBbvmdxWC3dSLWeMce3CDV4QqO48/e4WzD7wxIjErhGZoO7cOrkjT6K7E03VBrxvmBTBhdikK36AfRHUvJOV0wcvDjtIlJBNeCjzEisfkwGEUaOSCgXeQyh9mmye4UEL0yZBcWZwOKl79xOzjwfM6vgGiUDsDqJXYRWd3WawhsG4HP0Wky/x79/EUm90mvnCLW2AtSa7sXNY0Oys3kNYsoQDg1NKhZbPn6x4x7rjzpAnPMWyh2B6/rcBS5BYNORZKr1WIHkIHITUM4wuwS4x9trOuTf+oGvYPzu9QVaZmAGOLPqEokf7rM1OVajJfja7412hR4+kmarxDH4tYX3iX3WR2vMgWg=
 deploy:
-  - provider: s3
-    bucket: andy1huang-test-travis
-    acl: ''
-    region: "ap-northeast-1"
-  - provider: codedeploy
-    bucket: "andy1huang-test-travis"
-    key: latest/BlueGreen.zip 
-    bundle_type: zip
-    application: BlueGreen_APP
-    deployment_group: BlueGreen_GRP
-    region: "ap-northeast-1"
+- provider: s3
+  bucket: andy1huang-test-travis
+  acl: ''
+  region: ap-northeast-1
+- provider: codedeploy
+  bucket: andy1huang-test-travis
+  key: latest/BlueGreen.zip
+  bundle_type: zip
+  application: BlueGreen_APP
+  deployment_group: BlueGreen_GRP
+  region: ap-northeast-1
+notifications:
+  slack:
+    on_success: always
+    template:
+      - "%{repository_slug} (%{commit}) : %{message}"
+      - "Build details: %{build_url}"
+    secure: la16qt2uiu0f4Zxh7LrvNjCdhrZKsc3GkjaPWmWu3l0yyiB6tAB27DfYXA0CLczH78pKISKmveJt7QitKoro7FO6fSKErDL64mF8306wVrcIfdXbyKh43WpQxBl4PhkIhbAIpHf3J74zX7RoX8AUYdICl7xCkUOtad0UMfTnWrTPu+KbJZRW0vDvstYMojgmg9wHyr6CkTTg92LJRoAdCCFVRwmHu1MfxUDet32Y1QPr+j7m+xZ8I3QINPot4P1AV/fN8sYGBz1eZ24RGn73/ff6yJrG0LzP5lNWMyJuJIgLrd7GImgrwL/lzdNh0ZK8R6+nm9kQUFsQHm2dezXlwSJGg1BNeoQodRZ44Xhfnp4QtvTMhDMi3m0bqBr7eH+7apqVqmEe1Y0CgCLWRB3I9wFjRKSReAi8x5PcvJDGxpA9Uds/PtiiDzIArTruJsUizQSNqyhuWFg0pPfPjjkfm8EnCbE6bjcvOtFeyQidIbbIoL9105mxwdTMj5t5kDo2pY0HYEgn/zS6h48lolOIjV7Loo5x3ZohO7trPUkLKivPco+cfFD8LkCas1aUR58bC8/ejZ9EIW86UvhIELVyq3SIEynRNE6ffL9nomJ76jSh552kwAxJXcrm+EzwtwWeCav/X7JDDDhetgKL+sJiuOAH30qhsuKBnzYeErSMEb8=
