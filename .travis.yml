@@ -2,7 +2,7 @@ language: php
 php:
 - '5.6'
 
-script::
+before_deploy:
   - zip BlueGreen blue BlueGreen/Appspec/*
   - test -d upload || mkdir upload
   - mv BlueGreen.zip upload/
