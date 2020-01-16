@@ -17,7 +17,7 @@ deploy:
   region: ap-northeast-1
 - provider: codedeploy
   bucket: andy1huang-test-travis
-  key: latest/BlueGreen.zip
+  key: BlueGreen.zip
   bundle_type: zip
   application: BlueGreen_APP
   deployment_group: BlueGreen_GRP
