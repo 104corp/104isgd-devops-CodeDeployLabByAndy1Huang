@@ -16,7 +16,8 @@ deploy:
   bucket: andy1huang-test-travis
   acl: ''
   region: ap-northeast-1
-
+  on:
+    branch: master
 - provider: codedeploy
   bucket: andy1huang-test-travis
   key: BlueGreen.zip
