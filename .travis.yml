@@ -6,7 +6,7 @@ script:
 
 
 before_deploy:
-  - cd BlueGreen blue && zip Appspec Appspec/*
+  - zip BlueGreen BlueGreen/*
   - ls -al
 
 env:
@@ -24,7 +24,7 @@ deploy:
 
 - provider: codedeploy
   bucket: andy1huang-test-travis
-  key: Appspec.zip
+  key: BlueGreen.zip
   bundle_type: zip
   application: BlueGreen_APP
   deployment_group: BlueGreen_GRP
