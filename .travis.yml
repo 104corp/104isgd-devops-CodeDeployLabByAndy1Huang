@@ -6,7 +6,7 @@ script:
 
 
 before_deploy:
-  - zip BlueGreen BlueGreen/*
+  - zip -j BlueGreen BlueGreen/*
   - ls -al
 
 env:
