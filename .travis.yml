@@ -19,6 +19,7 @@ env:
 deploy:
 - provider: s3
   bucket: andy1huang-test-travis
+  skip_cleanup: true
   acl: ''
   region: ap-northeast-1
 
